@@ -189,7 +189,7 @@
                 <td class="news-date" style="width:15%"><?= date("Y-m-d", strtotime($news['created_at'])); ?></td>
                 <td  style="width:15%">
                     <div class="action-buttons">
-                        <button class="btn-edit" onclick="location.href='?inc=edit_news'">編輯</button>
+                        <button class="btn-edit" onclick="location.href='?inc=edit_news&id=<?=$news['id'];?>'">編輯</button>
                         <button class="btn-delete" onclick="location.href='?inc=delete_news&id=<?=$news['id'];?>'">刪除</button>
                     </div>
                 </td>

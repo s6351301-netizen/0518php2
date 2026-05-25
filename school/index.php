@@ -409,26 +409,16 @@
         <section id="news">
             <h2 class="section-title">最新消息</h2>
             <div class="news-section">
+                <?php 
+                $all_news=$pdo->query("select * from `news` order by created_at desc limit 5")->fetchAll();
+                foreach($all_news as $idx => $news):
+                ?>
                 <div class="news-item">
-                    <span class="news-title">🔔 2026年度校運會報名開始</span>
-                    <span class="news-date">2026-05-18</span>
+                    <span class="news-title"><?= $idx + 1 ?>. <?= $news['subject'];?></span>
+                    <span class="news-date"><?= date("Y-m-d",strtotime($news['created_at'])); ?></span>
                 </div>
-                <div class="news-item">
-                    <span class="news-title">🏅 應屆畢業生大學錄取成績揭曉</span>
-                    <span class="news-date">2026-05-15</span>
-                </div>
-                <div class="news-item">
-                    <span class="news-title">📖 暑期英文培訓班招生中</span>
-                    <span class="news-date">2026-05-12</span>
-                </div>
-                <div class="news-item">
-                    <span class="news-title">🎭 校園文化藝術節即將開幕</span>
-                    <span class="news-date">2026-05-10</span>
-                </div>
-                <div class="news-item">
-                    <span class="news-title">⚽ 校隊在全國運動會中取得佳績</span>
-                    <span class="news-date">2026-05-08</span>
-                </div>
+                <?php endforeach;?>
+
             </div>
         </section>
     </div>
