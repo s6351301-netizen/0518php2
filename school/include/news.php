@@ -190,7 +190,7 @@
                 <td  style="width:15%">
                     <div class="action-buttons">
                         <button class="btn-edit" onclick="location.href='?inc=edit_news'">編輯</button>
-                        <button class="btn-delete" onclick="location.href='?inc=del_news'">刪除</button>
+                        <button class="btn-delete" onclick="location.href='?inc=delete_news&id=<?=$news['id'];?>'">刪除</button>
                     </div>
                 </td>
             </tr>
