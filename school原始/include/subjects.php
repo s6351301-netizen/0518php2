@@ -1,5 +1,20 @@
 <h2>科別</h2>
-<!-- CSS是在admin.php中使用link標籤引入的 -->
+<style>
+#subjects-table {
+    width: 30%;
+    border-collapse: collapse;
+}
+#subjects-table th, #subjects-table td {
+    border: 1px solid #ddd;
+    padding: 8px 16px;
+    text-align:center;
+}
+
+#subjects-table td:nth-child(1) {
+    text-align-last: justify;
+    width:200px;
+}
+</style>
 <?php 
 
 //計算各科別，有多少學生

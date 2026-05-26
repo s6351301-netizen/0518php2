@@ -1,4 +1,136 @@
-<!-- CSS是在admin.php中使用link标签引入的 -->
+<style>
+/* 整個列表 */
+.student-list{
+    display:flex;
+    flex-wrap:wrap;
+    gap:20px;
+    margin:16px 0;
+}
+
+
+/* 卡片 */
+.student-card{
+    width:240px;
+    background:#ffffff;
+    border-radius:16px;
+    padding:16px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.08);
+
+    position:relative;
+
+    transition:0.3s;
+}
+
+
+/* 滑鼠效果 */
+.student-card:hover{
+    transform:translateY(-5px);
+    box-shadow:0 10px 25px rgba(0,0,0,0.15);
+}
+
+
+/* 學號 */
+.student-id{
+    position:absolute;
+    top:15px;
+    right:15px;
+
+    background:#6c63ff;
+    color:white;
+
+    padding:5px 12px;
+    border-radius:30px;
+
+    font-size:14px;
+}
+
+
+/* 大頭照 */
+.student-photo{
+    text-align:center;
+    margin-bottom:15px;
+}
+
+.student-photo img{
+    width:96px;
+    height:96px;
+    border-radius:50%;
+    object-fit:cover;
+    border:5px solid #f2f2f2;
+}
+
+
+/* 姓名 */
+.student-name{
+    text-align:center;
+    font-size:22px;
+    font-weight:bold;
+    margin-bottom:16px;
+}
+
+
+/* 資訊區 */
+.student-info{
+    display:flex;
+    flex-direction:column;
+    gap:6px;
+}
+
+
+/* 每一列 */
+.info-row{
+    display:flex;
+}
+
+
+/* 標題 */
+.label{
+    width:76px;
+    color:#666;
+    font-weight:bold;
+}
+
+
+/* 值 */
+.value{
+    flex:1;
+    color:#333;
+}
+.btn-row{
+    display:flex;
+    justify-content: space-evenly;
+    padding:4px 16px;
+}
+a.edit-btn {
+    padding: 4px 16px;
+    border: 1px solid #eee;
+    border-radius: 20px;
+    background: lightgreen;
+}
+a.edit-btn:hover,a.del-btn:hover{
+    padding:4px 24px;
+}
+
+a.del-btn {
+    padding: 4px 16px;
+    border: 1px solid #eee;
+    border-radius: 20px;
+    background: lightcoral;
+}
+.add-btn{
+    display:inline-block;
+    padding:8px 24px;
+    background:lightskyblue;
+    margin:20px;
+    border:1px solid lightseagreen;
+    border-radius:24px;
+    font-size:20px;
+}
+.add-btn:hover{
+    box-shadow:3px 3px 15px #666;
+    transform:translateY(-5px);
+}
+</style>
 <?php
 $dept_name=$pdo->query("SELECT `name` FROM `dept` WHERE `id`='{$_GET['dept']}'")->fetchColumn();
 ?>
